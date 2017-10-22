@@ -18,13 +18,16 @@ class ArbitroController extends Controller
         }
 
     public function edit($id)
-        {
+        {        
            $arbitro = Arbitro::find($id);
            return view('arbitro.edit',compact('arbitro','id'));
          } 
 
     public function store(Request $request)
-         {
+         { 
+           $this->validate(request(), [
+          'nome' => 'required'  
+            ]);
         $arbitro = new Arbitro([
           'nome' => $request->get('nome'),
           'apelido' => $request->get('apelido'),   
@@ -40,41 +43,14 @@ class ArbitroController extends Controller
             return back()->with('success', 'Arbitro adicionado com sucesso'); 
 
          } 
-
-
-    // public function update(Request $request, $id)
-    //      {  
-
-    //     $arbitro = Arbitro::find($id);
-    //     $this->validate(request(), [
-    //     //   'nome' => 'required|unique:posts|max:255',
-    //     //   'nome' => 'required|unique:posts|max:255',
-    //     // //   // 'nome' => 'required' 
-    //     //   'idade' => 'between 10 - 60', 
-    //         ]);
-    //     $arbitro ->apelido = $request->get('apelido');
-    //     $arbitro ->nome = $request->get('nome');
-    //     $arbitro ->sexo = $request->get('sexo');
-    //     $arbitro ->idade = $request->get('idade');
-    //     $arbitro ->telefone = $request->get('telefone');
-    //     $arbitro ->email = $request->get('email');
-    //     $arbitro ->descricao = $request->get('descricao');
-    //     $arbitro->save();
-    //     return redirect('arbitro')->with('success','Arbitro actualizado com sucesso');
  
-    // } 
-
-
-
     public function update(Request $request, $id)
-         {  
-
-        $arbitro = Arbitro::find($id);
-        $this->validate(request(), [
-         //  'nome' => 'required|unique:arbitro|max:255'
-         
-          'nome' => 'required' 
+         {      
+         $this->validate(request(), [
+          'nome' => 'required'  
             ]);
+
+        $arbitro = Arbitro::find($id); 
         $arbitro ->apelido = $request->get('apelido');
         $arbitro ->nome = $request->get('nome');
         $arbitro ->sexo = $request->get('sexo');
@@ -97,6 +73,6 @@ class ArbitroController extends Controller
 
                         ->with('success','Arbitro apagado com successo');
 
-    }
-    
+    } 
+     
 }

@@ -2,7 +2,25 @@
 @section('content')
 <title>Adicionar clube</title>
 <div class="container"> 
-            <a href="{{URL::to('clube')}}" title=""><h4><- voltar</h4></a>
+       <link rel="stylesheet" href="{{asset('css/app.css')}}">
+      <h2>Registrar clube</h2><br>
+   <a href="{{URL::to('clube')}}" title=""><h4><- voltar</h4></a>
+             
+               @if ($errors->any())
+                   <div class="alert alert-danger">
+                      <ul>
+                         @foreach ($errors->all() as $error)
+                           <li>{{ $error }}</li>
+                         @endforeach
+                      </ul>
+                   </div><br>
+               @endif
+
+               @if (\Session::has('success'))
+                   <div class="alert alert-success">
+                        <p>{{ \Session::get('success') }}</p>
+                   </div><br>
+               @endif
 
   <form method="post" action="{{url('clube')}}">
           {{csrf_field()}}

@@ -3,6 +3,7 @@
 @section('content')
  <title>Adicionar atleta </title>
 <div class="container"> 
+      <h2>Registrar atleta</h2><br>
         <a href="{{URL::to('atleta')}}" title=""><h4><- voltar</h4></a>   
 
                @if ($errors->any())

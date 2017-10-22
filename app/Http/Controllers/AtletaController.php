@@ -15,20 +15,22 @@ class AtletaController extends Controller
         return view('atleta.index', compact('atleta'));
        } 
    public function create()
-       { 
-
+       {  
              $clube =Clube::all();  
              return view("atleta.create",compact('clube'));
        }  
 
     public function edit($id)
-       {
+       { 
         $atleta= Atleta::find($id);
         return view('atleta.edit',compact('atleta','id'));
        } 
 
     public function store(Request $request)
-    { 
+    {  
+           $this->validate(request(), [
+          'nome' => 'required'  
+            ]);
         $atleta = new atleta([
           'nome' => $request->get('nome'),
           'apelido' => $request->get('apelido'),

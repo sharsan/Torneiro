@@ -8,14 +8,16 @@
   <!-- Navbar content -->
 </nav> 
 
-      <div class="col-md-4">   <!--  este div inseri pra separa o Search com o restante -->
-         <form class="form-inline my-2 my-lg-0"> 
-          <input class="form-control mr-sm-2" type="search" placeholder="Insira a palavra a pesquisar..." aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-         </form> 
-      </div> 
+  <div class="col-lg-4">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Insira a palavra a pesquisar..." aria-label="pesquisar">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button">Buscar!</button>
+      </span>
+    </div>
+  </div>
   
-    <div class="row">
+    <div class="row">  <!--  este div inseri pra separa o Search com o restante -->
     <thead>    
 
 

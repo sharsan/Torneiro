@@ -3,9 +3,23 @@
 <title>Treinadores </title>
   <div class="container">
     <table class="table table-striped">
-  <a href="{{URL::to('treinador/create')}}" title=""><h4>Adicionar treinador</h4></a>
+
+  <div class="col-lg-4">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Insira a palavra a pesquisar..." aria-label="pesquisar">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button">Buscar!</button>
+      </span>
+    </div>
+  </div> 
+
+          <div class="row">  <!--  este div inseri pra separa o Search com o restante -->
+
  
     <thead>
+
+  <a href="{{URL::to('treinador/create')}}" title=""><h4>Adicionar treinador</h4></a>
+
       <tr>
         <th>ID</th>
         <th>Nome</th> 
@@ -42,7 +56,8 @@
             <button class="btn btn-danger" type="submit">Apagar</button>
           </form>
         </td>
-      </tr>
+      </tr>       
+       </div>  <!--  este div inseri pra separa o Search com o restante -->
       @endforeach
     </tbody>
   </table>

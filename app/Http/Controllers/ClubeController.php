@@ -14,23 +14,9 @@ class ClubeController extends Controller
  
       public function create()
          {
-             return view('clube.create');
+             return view("clube.create",compact('clube')); 
          } 
     
-         public function store(Request $request)
-         {
-            $clube = new Clube([
-                'nome' => $request->get('nome'), 
-                'provincia' => $request->get('provincia'),
-                'cidade' => $request->get('cidade'), 
-                'descricao' => $request->get('descricao')
-               //campos de exigencia de valores
-                              ]);
-
-             $clube->save();
-             return redirect('/clube');
-         }
- 
          public function edit($id)
          {
              $clube = Clube::find($id);
@@ -38,15 +24,36 @@ class ClubeController extends Controller
              return view('clube.edit', compact('clube','id')); 
          } 
 
+         public function store(Request $request)
+         {     
+           $this->validate(request(), [
+          'nome' => 'required'  
+            ]);
+            $clube = new Clube([
+                'nome' => $request->get('nome'), 
+                'provincia' => $request->get('provincia'),
+                'cidade' => $request->get('cidade'), 
+                'descricao' => $request->get('descricao')
+               //campos de exigencia de valores
+                              ]);
+      Clube::create($request->all());
+            return back()->with('success', 'Clube adicionado com sucesso'); 
+ 
+         }
+ 
          public function update(Request $request, $id)
-         {
+         {     
+           $this->validate(request(), [
+          'nome' => 'required'  
+            ]);
              $clube = Clube::find($id);
              $clube->nome = $request->get('nome'); 
              $clube->provincia = $request->get('provincia');
              $clube->cidade = $request->get('cidade'); 
              $clube->descricao = $request->get('descricao'); 
              $clube->save();
-             return redirect('/clube');
+             return redirect('clube')->with('success','Clube actualizado com sucesso');
+ 
          }
  
          public function destroy($id)
@@ -56,4 +63,6 @@ class ClubeController extends Controller
 
            return redirect('/clube');
       } 
+
+      
      }

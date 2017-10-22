@@ -30,7 +30,10 @@ class TreinadorController extends Controller
              }
 
          public function store(Request $request)
-             {
+             { 
+           $this->validate(request(), [
+          'nome' => 'required'  
+            ]);
                  $treinador = new Treinador([
                   'nome' => $request->get('nome'),
                   'apelido' => $request->get('apelido'),   

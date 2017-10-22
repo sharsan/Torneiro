@@ -1,13 +1,9 @@
 @extends('master')
 
 @section('content')
- <title>Registrar arbitro </title>
-<div class="container">
-       <title>Adicionamento de arbitros </title>
-       <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  </head>
-  <body>
-    <div class="container">
+ <title>Adicionar arbitro </title>
+<div class="container"> 
+       <link rel="stylesheet" href="{{asset('css/app.css')}}"> 
       <h2>Registrar arbitro</h2><br>
   <a href="{{URL::to('arbitro')}}" title=""><h4><- voltar</h4></a>
              
