@@ -28,7 +28,7 @@ class VencedorController extends Controller
             {   
 
         $this->validate(request(), [
-           'nome' => 'required|unique:arbitros|max:30', 
+           'nome' => 'required|unique:arbitros|max:40', 
            
             ]);
         $vencedor = new Vencedor([

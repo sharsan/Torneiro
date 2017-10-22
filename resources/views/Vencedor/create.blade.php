@@ -30,13 +30,13 @@
                                <!-- Nome do campeonato  -->  
 
            <div class="col-md-12">
-                <label for="nome"> Nome do campeonato :
+                <label for="nome"> Nome do campeonato :</label>
                    <input type="text" class="form-control" name="nome"></input> 
-                </label>
+                
            </div>  
-      </div>
+<!--       </div>
 
-      <div class="form-group col-md-8"> 
+      <div class="form-group col-md-8">  -->
              <div class="col-md-6"> <br>  
                                     <!-- Escalao  --> 
               <label for="escalao">Escalão de peso :
@@ -135,7 +135,7 @@
        <div class="form-group col-md-8"> <br>  
             <div class="col-md-10">     
                   <label for="">A :
-                  <select id="nome" name="nome">
+                  <select id="" name="">
 
                    @foreach($atleta as $atl)
                    <option value="{{$atl->nome}}">{{$atl->nome}} </option>
@@ -145,7 +145,7 @@
             </div>
             <div class="col-md-6">              
                    <label for="">B :
-                   <select id="nome" name="nome"> 
+                   <select id="" name=""> 
                    @foreach($atleta as $atl)
                    <option value="{{$atl->nome}}">{{$atl->nome}} </option>
                    @endforeach
@@ -154,7 +154,7 @@
             </div> 
             <div class="col-md-4"> 
                    <label for="">Vencedor A-B :
-                   <select id="nome" name="nome"> 
+                   <select id="" name=""> 
                    @foreach($atleta as $atl)
                    <option value="{{$atl->nome}}">{{$atl->nome}} </option>
                    @endforeach
@@ -167,7 +167,7 @@
        <div class="form-group col-md-8"> <br>  
             <div class="col-md-10">     
                   <label for="">C :
-                  <select id="nome" name="nome">
+                  <select id="" name="">
 
                    @foreach($atleta as $atl)
                    <option value="{{$atl->nome}}">{{$atl->nome}} </option>
@@ -177,7 +177,7 @@
             </div>
             <div class="col-md-6">              
                    <label for="">D :
-                   <select id="nome" name="nome"> 
+                   <select id="" name=""> 
                    @foreach($atleta as $atl)
                    <option value="{{$atl->nome}}">{{$atl->nome}} </option>
                    @endforeach
@@ -186,7 +186,7 @@
             </div> 
             <div class="col-md-4"> 
                    <label for="">Vencedor C-D :
-                   <select id="nome" name="nome"> 
+                   <select id="" name=""> 
                    @foreach($atleta as $atl)
                    <option value="{{$atl->nome}}">{{$atl->nome}} </option>
                    @endforeach
@@ -194,7 +194,7 @@
                    </label>
             </div>
         </div>    
-    </div>
+     
 
                                     <!-- Outros detalhes --> 
           <div class="form-group col-md-12">
