@@ -29,8 +29,8 @@ class AtletaController extends Controller
     public function store(Request $request)
     {  
            $this->validate(request(), [
-          'nome' => 'required'  
-            ]);
+          'nome' => 'required|unique:atletas|max:40' 
+                      ]);
         $atleta = new atleta([
           'nome' => $request->get('nome'),
           'apelido' => $request->get('apelido'),
@@ -65,7 +65,7 @@ class AtletaController extends Controller
     {
         $atleta = Atleta::find($id);
         $this->validate(request(), [         
-          'nome' => 'required' 
+          'nome' => 'required|unique:posts|max:10' 
             ]);
         $atleta->nome = $request->get('nome');
              // $table->string('email')/*->unique()*/; 

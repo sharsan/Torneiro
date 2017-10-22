@@ -3,7 +3,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Arbitro;
+use App\Arbitro;  
+
 
 class ArbitroController extends Controller
 {
@@ -26,7 +27,12 @@ class ArbitroController extends Controller
     public function store(Request $request)
          { 
            $this->validate(request(), [
-          'nome' => 'required'  
+           'nome' => 'required|unique:arbitros|max:40',
+           // 'email' => 'unique:users,email'
+           // 'email' => Rule::unique('users')->ignore($user->id, 'user_id'),
+           // 'foto' => 'mimes:jpeg,bmp,png'
+           // 'email' => 'unique:connection.users,email_address'
+           
             ]);
         $arbitro = new Arbitro([
           'nome' => $request->get('nome'),
@@ -47,14 +53,14 @@ class ArbitroController extends Controller
     public function update(Request $request, $id)
          {      
          $this->validate(request(), [
-          'nome' => 'required'  
+          'nome' => 'required' 
             ]);
 
         $arbitro = Arbitro::find($id); 
         $arbitro ->apelido = $request->get('apelido');
         $arbitro ->nome = $request->get('nome');
         $arbitro ->sexo = $request->get('sexo');
-        $arbitro ->idade = $request->get('idade');
+        $arbitro ->idade = $request->get('idade');  
         $arbitro ->telefone = $request->get('telefone');
         $arbitro ->email = $request->get('email');
         $arbitro ->descricao = $request->get('descricao');
@@ -73,6 +79,5 @@ class ArbitroController extends Controller
 
                         ->with('success','Arbitro apagado com successo');
 
-    } 
-     
+    }  
 }

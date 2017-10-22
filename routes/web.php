@@ -21,12 +21,14 @@ Route::get('home', function () {
 
 Route::resource('artigo', 'ArtigoController');
 Route::resource('arbitro', 'ArbitroController');
-Route::resource('atleta', 'AtletaController');
+Route::resource('atleta', 'AtletaController'); 
 Route::resource('clube', 'ClubeController'); 
-Route::resource('treinador', 'TreinadorController'); 
-Route::resource('vencedor', 'VencedorController'); 
+Route::resource('treinador', 'TreinadorController');   
+Route::resource('vencedor', 'VencedorController');   
  
 
 Route::get('/login', 'LoginController@form');
 Route::post('/login', 'LoginController@login');
+
+Route::get('/quatro', 'VencedorController@quatro');
  

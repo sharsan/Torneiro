@@ -44,7 +44,7 @@ class ClubeController extends Controller
          public function update(Request $request, $id)
          {     
            $this->validate(request(), [
-          'nome' => 'required'  
+                  'nome' => 'required|unique:clubes|max:10' 
             ]);
              $clube = Clube::find($id);
              $clube->nome = $request->get('nome'); 

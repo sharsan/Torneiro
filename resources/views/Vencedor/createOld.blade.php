@@ -1,13 +1,10 @@
-@extends('master')
-
+@extends('master') 
 @section('content')
  <title>Vencedores </title>
 <div class="container"> 
-       <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  </head>
-  <body>
-    <div class="container">
       <h2>Registrar vencedor</h2><br>
+     
+    <div class="container">
   <a href="{{URL::to('vencedor')}}" title=""><h4><- voltar</h4></a>
              
                @if ($errors->any())
@@ -26,7 +23,7 @@
                    </div><br>
                @endif
 
-  <form method="post" action="{{url('vencedor')}}">
+  <form method="post"  action="{{url('vencedor')}}">
     <div class="form-group row">
        {{csrf_field()}}     
                           
@@ -85,7 +82,19 @@
                 </label>
  
              </div>
-          </div>   
+
+
+              <div class="form-group">
+                <select id="nome" name="nome">
+                  
+                          @foreach($atleta as $atl)
+                          <option value="{{$atl->nome}}">{{$atl->nome}} </option>
+                        @endforeach
+                </select>
+
+              </div>
+
+     
       
                                     <!-- Outros detalhes --> 
           <div class="form-group col-md-12">

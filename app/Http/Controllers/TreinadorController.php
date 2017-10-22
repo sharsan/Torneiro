@@ -32,7 +32,7 @@ class TreinadorController extends Controller
          public function store(Request $request)
              { 
            $this->validate(request(), [
-          'nome' => 'required'  
+             'nome' => 'required|unique:treinadors|max:40' 
             ]);
                  $treinador = new Treinador([
                   'nome' => $request->get('nome'),
