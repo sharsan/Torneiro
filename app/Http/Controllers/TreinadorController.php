@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Treinador;
+use App\Clube;
 
 class TreinadorController extends Controller
 {
@@ -14,8 +15,13 @@ class TreinadorController extends Controller
 
          public function create()
              { 
-             return view("treinador.create",compact('treinador'));
+             $clube =Clube::all();  
+             return view("treinador.create",compact('clube'));
              } 
+         // public function create()
+         //     { 
+         //     return view("treinador.create",compact('treinador'));
+         //     } 
 
          public function edit($id)
              {
@@ -60,7 +66,7 @@ class TreinadorController extends Controller
         $treinador ->email = $request->get('email');
         $treinador ->descricao = $request->get('descricao');
         $treinador->save();
-        return redirect('treinador')->with('success','treinador actualizado com sucesso');
+        return redirect('treinador')->with('success','Treinador actualizado com sucesso');
  
     }   
 

@@ -31,48 +31,60 @@
     <div class="form-group row">
        {{csrf_field()}}  
                           
+                          
         <div class="row">
           <div class="form-group col-md-6">  
             
                             <!-- Apelido -->
             <div class="col-md-6">
-              <label for="apelido"> Apelido:</label>
+                <label for="apelido"> Apelido:</label>
                 <input type="text" class="form-control" name="apelido"></input> </div>
              
                              <!-- Nome -->
-             <div class="col-md-12">
-               <label for="nome"> Nome :</label>
-                 <input type="text" class="form-control" name="nome"></input><br></div>  
-              
-             <div class="col-md-4"> <br>
+            <div class="col-md-12">
+                <label for="nome"> Nome :</label>
+                <input type="text" class="form-control" name="nome"></input><br></div>
+  
+          </div>
+          <div class="form-group col-md-10">    
+                                     <!-- Fotografia   -->
+            <div class="col-md-3"> 
+               <label for="fotografia">Fotografia 
+                 <input type="file" class="form-control-file" id="fotografia">
+               </label> 
+            </div>
                                <!-- Sexo --> 
-               <label for="sexo"> Sexo :</label> 
-                 <select name="sexo" id="sexo"> 
-                     <option value="M">M</option>
-                     <option value="F">F</option> 
-                 </select>    
-             </div>
+            <div class="col-md-3">  <br> 
+                <label for="sexo">Sexo :
+                <input type="radio" class="form-check-input" name="sexo" value="M" checked></input> 
+           M
+                <input class="form-check-input" type="radio" name="sexo" id="F" value="F"></input> 
+           F
+                </label> 
+            </div>
             
-                            <!-- Idade  -->
+                                     <!-- Idade  -->
                                   
-             <div class="col-md-3"> 
-               <label for="idade"> Idade:</label>
-               <input type="number" class="form-control" name="idade"></input> </div>  
-           </div>   
-            <div class="form-group col-md-10">    
+            <div class="col-md-2"> 
+               <label for="idade"> Idade:
+                 <input type="number" class="form-control" name="idade"></input> 
+               </label>
+            </div>  
+          </div>
+          <div class="form-group col-md-10">    
                                      <!-- telefone --> 
-              <div class="col-md-3">                
+            <div class="col-md-3">                
                <label for="telefone"> telefone:</label>
-                  <input type="int" class="form-control" name="telefone"></input> 
-              </div>    
-              <div class="col-md-6">         
+               <input type="int" class="form-control" name="telefone"></input></div>  
+                 
+            <div class="col-md-6">         
                                      <!-- email --> 
-                <label for="email"> email: </label> 
-                     <input type="text" class="form-control" name="email"></input> 
-              </div>
-           </div>
- 
- 
+               <label for="email"> email: </label> 
+               <input type="text" class="form-control" name="email"></input>
+            </div> 
+              
+          </div> 
+             
                                     <!-- Outros detalhes --> 
       
          <div class="form-group col-md-10">

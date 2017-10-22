@@ -1,5 +1,4 @@
-@extends('master')
-
+@extends('master') 
 @section('content')
     <title>Actualizando arbitro </title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
@@ -8,8 +7,7 @@
     <div class="container">
       <h2>Editar Arbitro</h2> 
   <a href="{{URL::to('arbitro')}}" title=""><h4><- voltar</h4></a>
-
-
+ 
                @if ($errors->any())
                    <div class="alert alert-danger">
                       <ul>

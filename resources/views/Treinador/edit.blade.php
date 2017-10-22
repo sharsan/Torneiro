@@ -33,35 +33,41 @@
       <div class="row">
          <div class="form-group col-md-10">
                                    <!-- Apelido -->
-            <div class="col-md-4">
+            <div class="col-md-3">
                <label for="apelido"> Apelido:</label>
                <input type="text" class="form-control" name="apelido"value="{{$treinador->apelido}}"></div> 
                   
                                      <!-- Nome -->
-            <div class="col-md-8">
+            <div class="col-md-6">
                <label for="nome"> Nome :</label> 
                <input type="text" class="form-control" name="nome"value="{{$treinador->nome}}"><br></div>
 
                                      <!-- Clube -->
-            <div class="col-md-8">
+            <div class="col-md-4">
                <label for="clube"> Clube :</label> 
                <input type="text" class="form-control" name="clube"value="{{$treinador->clube}}"><br></div>
          </div>    
          <div class="form-group col-md-10">  
-                                      <!-- Sexo -->
-            <div class="col-md-4"> <br>
-               <label for="sexo"> Sexo : 
-                  <select name="sexo" id="sexo"value="{{$treinador->sexo}}"> 
-                  <option value="M">M</option>
-                  <option value="F">F</option></select> </div>
+
           
                                         <!-- Idade  -->
                                  
             <div class="col-md-2">  
                <label for="idade"> Idade:</label> 
-                   <input type="number" class="form-control" name="idade"value="{{$treinador->idade}}"></div> 
-                </div>
+         <input type="number" class="form-control" name="idade"value="{{$treinador->idade}}"></input>
+           </div> 
+                
+                               <!-- Sexo --> 
+    
 
+               <label for="sexo">Sexo :
+                <input type="radio" class="form-check-input" name="sexo" value="M" checked></input> 
+            M
+                 <input class="form-check-input" type="radio" name="sexo" id="F" value="F"></input> 
+            F
+               </label>
+            </div>
+     
            <div class="form-group col-md-8">
                                          <!-- telefone -->
             <div class="col-md-4">

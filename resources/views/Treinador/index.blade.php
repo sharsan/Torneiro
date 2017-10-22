@@ -1,5 +1,6 @@
 @extends('master')
 @section('content')
+<title>Treinadores </title>
   <div class="container">
     <table class="table table-striped">
   <a href="{{URL::to('treinador/create')}}" title=""><h4>Adicionar treinador</h4></a>

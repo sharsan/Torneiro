@@ -81,15 +81,20 @@
                               <!-- Clube -->
           
           <div class="col-md-12"> 
-             <div class="form-group col-md-10"> <br> 
-             <label for="clube"> Clube:  
-                <select id="clube" name="clube">
-                  
-                          @foreach($clube as $clb)
-                          <option value="{{$clb->nome}}">{{$clb->nome}} </option>
-                        @endforeach
-                </select>
-              </label>  
+             <div class="form-group col-md-10"> <br>
+                 <label for="clube">Clube:
+                   <tr>   
+                    <select name="clube" id="clube"> 
+                      <option value="Outro">--OUTRO--</option>
+                      <option value="Cidade da Matola">Cidade da Matola</option>
+                      <option value="EDM">EDM</option>
+                      <option value="Maria Clara">Maria Clara</option>
+                      <option value="Naval">Naval</option>
+                      <option value="Nyamunda">Nyamunda</option>
+                      <option value="7 de Setembro">7 de Setembro</option>
+                    </select> 
+                    </tr>  
+                 </label>
                        
                                  <!--Categoria -->
         

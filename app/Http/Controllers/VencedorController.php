@@ -1,10 +1,10 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Vencedor;  
+use App\Vencedor;
+use App\Atleta;  
 
 //use DB;
 
@@ -18,11 +18,17 @@ class VencedorController extends Controller
              }
 
          public function create()
-             {   
-             return view("vencedor.create",compact('vencedor'));
-             } 
-    
+             { 
+             $atleta =Atleta::all(); 
+             return view("vencedor.create",compact('atleta'));
+             }  
  
+         public function edit($id)
+            {
+                 $vencedor = Vencedor::find($id);
+                 return view('vencedor.edit',compact('vencedor','id'));
+            }
+
          public function store(Request $request)
             {   
                  $vencedor =  new Vencedor([
@@ -38,12 +44,6 @@ class VencedorController extends Controller
               Vencedor::create($request->all());
                         return back()->with('success', 'Vencedor adicionado com sucesso');  
             }  
-         public function edit($id)
-            {
-                 $vencedor = Vencedor::find($id);
-                 return view('vencedor.edit',compact('vencedor','id'));
-            }
-
  
          public function update(Request $request, $id)
              /*   public function updateAtletas(Request $request, $id)  */

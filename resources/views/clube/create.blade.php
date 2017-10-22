@@ -1,26 +1,27 @@
 @extends('master') 
 @section('content')
-<title>Registrar clube</title>
-<div class="container">
-  <h2>Registrar clube</h2><br>
+<title>Adicionar clube</title>
+<div class="container"> 
             <a href="{{URL::to('clube')}}" title=""><h4><- voltar</h4></a>
 
   <form method="post" action="{{url('clube')}}">
           {{csrf_field()}}
                                <!-- Nome -->
-
-           <div class="col-md-12">
-              <label class="ls-label">
-                <b class="ls-label-text">Nome</b>
-                   <div class="ls-field-md">
-                      <input class="uppercase" name="nome" id="nome" placeholder="Ex: Real Madrid" type="text" value="">
-                   </div><br>
-              </label>
-           </div>
-                             <!-- Provincia -->
+ 
+        <div class="row">
+          <div class="form-group col-md-8">  
              
-           <div class="col-md-12">
-             <div class="form-group col-md-10"> <br>
+                             <!-- Nome -->
+            <div class="col-md-8">
+                <label for="nome"> Nome :</label>
+                <input type="text" class="form-control" name="nome"placeholder="Ex: Costa do Sol"></input><br>
+            </div>
+        </div>
+                             <!-- Provincia -->
+              
+
+        <div class="col-md-12"> 
+            <div class="col-md-3"> 
               <label  for="provincia">Provincia:
                 <tr>  <select name="provincia" id="provincia">
                          <option value="Maputo">Maputo</option> 
@@ -37,8 +38,9 @@
                       </select> 
                 </tr>     
               </label>   
-                               <!-- Cidade --> 
-       
+            </div> 
+                               <!-- Cidade -->  
+             <div class="col-md-3"> 
               <label for="cidade">Cidade:
                     <tr> 
                        <select name="cidade" id="cidade"> 
@@ -49,20 +51,22 @@
                         </select>
                      </tr>   
                </label> 
-           </div> 
-                   
+            </div>  
+          </div>  
 
-        <div class="form-group col-md-12">
-              <label for="descricao" class="col-sm-2 col-form-label col-form-label-sm">Outros detalhes
-                <br>
-                   <textarea name="descricao" rows="8" cols="80"></textarea> 
+                                     <!-- Outros detalhes --> 
+
+         <div class="form-group col-md-12">
+             <br> <label for="smFormGroupInput" class="col-sm-2 col-form-label col-form-label-sm">Outros detalhes
+               
+          <br> <br><textarea name="nota" rows="8" cols="80"></textarea> 
               </label>
         </div>
 
-   <div class="form-group col-md-4"><br>
+   <div class="form-group col-md-4"> 
     <button type="submit" class="btn btn-success" style="margin-left:38px">Adicionar clube</button>  
     <!-- -->
   </div>
 </form>
  
-@endsection
+@endsection 
