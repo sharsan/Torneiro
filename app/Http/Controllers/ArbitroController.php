@@ -28,6 +28,7 @@ class ArbitroController extends Controller
          { 
            $this->validate(request(), [
            'nome' => 'required|unique:arbitros|max:40',
+           'idade'=> 'numeric|min:10|max:90',
            // 'email' => 'unique:users,email'
            // 'email' => Rule::unique('users')->ignore($user->id, 'user_id'),
            // 'foto' => 'mimes:jpeg,bmp,png'
@@ -67,7 +68,7 @@ class ArbitroController extends Controller
         $arbitro->save();
         return redirect('arbitro')->with('success','Arbitro actualizado com sucesso');
  
-    }  
+               }  
 
     public function destroy(Request $request, $id)
 
@@ -79,5 +80,14 @@ class ArbitroController extends Controller
 
                         ->with('success','Arbitro apagado com successo');
 
-    }  
+                }  
+     public function testPhotoCanBeUploaded()
+    {
+         $this->visit('/upload')
+            ->attach($pathToFile, 'photo')
+            ->press('Upload')
+            ->see('Upload Successful!');
+                  }
+
+
 }

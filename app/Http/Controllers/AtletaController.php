@@ -30,6 +30,7 @@ class AtletaController extends Controller
     {  
            $this->validate(request(), [
           'nome' => 'required|unique:atletas|max:40' 
+          'idade'=> 'numeric|min:10|max:90',
                       ]);
         $atleta = new atleta([
           'nome' => $request->get('nome'),

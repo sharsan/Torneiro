@@ -22,7 +22,7 @@ class ArtigoController extends Controller
     public function store(Request $request)
     {
            $this->validate(request(), [
-          'nome' => 'required'  
+          'nome' => 'required'   
             ]);
         $artigo = new artigo([
           'title' => $request->get('title'),

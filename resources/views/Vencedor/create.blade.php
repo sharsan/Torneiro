@@ -103,36 +103,10 @@
             </div>
         </div>
      </div> 
- 
-     <div class="row">
-        <div class="form-group">
-           <div class="form-group">
-             <div class="col-md-10"> <br>
-                  <label for="">Perdedor A-B :
-                       <select id="" name="">
-                  
-                          @foreach($atleta as $atl)
-                          <option value="{{$atl->nome}}">{{$atl->nome}} </option>
-                          @endforeach
-                       </select> 
-                  </label>
-             </div>  
-             <div class="col-md-10"> 
-                    <label for="">Perdedor C-D :
-                          <select id="" name=""> 
-                          @foreach($atleta as $atl)
-                          <option value="{{$atl->nome}}">{{$atl->nome}} </option>
-                          @endforeach
-                          </select> 
-                  </label>
-             </div>
-       </div> 
-   </div>
-      
 
 
    <div class="row"> 
-       <div class="form-group col-md-8"> <br>  
+       <div class="form-group col-md-6"> <br> <br> 
             <div class="col-md-10">     
                   <label for="">A :
                   <select id="" name="">
@@ -143,7 +117,7 @@
                    </select> 
                    </label> 
             </div>
-            <div class="col-md-6">              
+            <div class="col-md-4">              
                    <label for="">B :
                    <select id="" name=""> 
                    @foreach($atleta as $atl)
@@ -152,19 +126,20 @@
                    </select> 
                    </label>
             </div> 
-            <div class="col-md-4"> 
+            <div class="col-md-10"> 
                    <label for="">Vencedor A-B :
                    <select id="" name=""> 
                    @foreach($atleta as $atl)
                    <option value="{{$atl->nome}}">{{$atl->nome}} </option>
                    @endforeach
-                   </select>
+                   </select> 
+                 </label>
             </div>
         </div>    
     </div>     
     
    <div class="row"> 
-       <div class="form-group col-md-8"> <br>  
+       <div class="form-group col-md-4"> <br>  
             <div class="col-md-10">     
                   <label for="">C :
                   <select id="" name="">
@@ -184,7 +159,7 @@
                    </select> 
                    </label>
             </div> 
-            <div class="col-md-4"> 
+            <div class="col-md-10"> 
                    <label for="">Vencedor C-D :
                    <select id="" name=""> 
                    @foreach($atleta as $atl)
@@ -193,21 +168,46 @@
                    </select>
                    </label>
             </div>
-        </div>    
-     
 
-                                    <!-- Outros detalhes --> 
-          <div class="form-group col-md-12">
-                <label for="descricao" class="col-sm-2 col-form-label col-form-label-sm"> Outros detalhes
-                <br>
-                   <textarea name="descricao" rows="8" cols="80"></textarea> 
+            <div class="form-group">
+                <div class="form-group">
+            <div class="col-md-10"> <br>
+                   <label for="">  3º e 4º </label>
+            </div>
+                  <div class="col-md-10"> 
+                   <label for="">Perdedor A-B :
+                   <select id="" name="">
+                  
+                   @foreach($atleta as $atl)
+                   <option value="{{$atl->nome}}">{{$atl->nome}} </option>
+                   @endforeach
+                   </select> 
+                   </label>   <tr>   
+            </div>        <label for="">Final </label>
+            <div class="col-md-10"> 
+                   <label for="">Perdedor C-D :
+                        <tr>  <select id="" name=""> 
+                   @foreach($atleta as $atl)
+                   <option value="{{$atl->nome}}">{{$atl->nome}} </option>
+                   @endforeach
+                   </select> </tr>
+                   </label> 
+            <tr>
+         </div> 
+
+                                     <!-- Outros detalhes --> 
+
+         <div class="form-group col-md-12">
+             <br> <label for="smFormGroupInput" class="col-sm-2 col-form-label col-form-label-sm">Outros detalhes
+               
+          <br> <br><textarea name="nota" rows="8" cols="80"></textarea> 
               </label>
-          </div>
+        </div>
 
-
-   <div class="form-group col-md-4"><br>
-    <button type="submit" class="btn btn-success" style="margin-left:38px">Adicionar vencedor</button>   
+   <div class="form-group col-md-4"> 
+    <button type="submit" class="btn btn-success" style="margin-left:38px">Adicionar vencedores</button>  
+    <!-- -->
   </div>
 </form>
  
-@endsection  
+@endsection 

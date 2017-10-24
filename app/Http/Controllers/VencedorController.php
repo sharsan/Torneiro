@@ -28,8 +28,7 @@ class VencedorController extends Controller
             {   
 
         $this->validate(request(), [
-           'nome' => 'required|unique:arbitros|max:40', 
-           
+           'nome' => 'required|unique:arbitros|max:40',  
             ]);
         $vencedor = new Vencedor([
           'juri' => $request->get('juri'),
@@ -42,8 +41,14 @@ class VencedorController extends Controller
           'descricao' => $request->get('descricao') 
           ]);
 
+$existe=Vencedor::where("nome",$request->get('nome'))->where("escalao",$request->get('escalao'))->exists();
+
+         if($existe==false){
              Vencedor::create($request->all()); 
             return back()->with('success', 'Vencedor adicionado com sucesso');
+          }else{
+            return back()->with('success', 'Ja existe este registo');
+          }
                     } 
 
          public function edit($id)
