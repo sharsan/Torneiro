@@ -30,11 +30,15 @@ class TreinadorController extends Controller
              }
 
          public function store(Request $request)
-             { 
-           $this->validate(request(), [
-             'nome' => 'required|unique:treinadors|max:40',
-             'idade'=> 'numeric|min:10|max:90',
-            ]);
+             {    
+           $existe=$request->get('idade')!="";
+
+                   if($existe==true){
+                           $this->validate(request(), [
+              'idade'=> 'numeric|min:10|max:90',
+              'nome' => 'required|unique:treinadors|max:40',
+               // 'idade'=> 'numeric|min:10|max:90',
+              ]);
                  $treinador = new Treinador([
                   'nome' => $request->get('nome'),
                   'apelido' => $request->get('apelido'),   
@@ -43,8 +47,23 @@ class TreinadorController extends Controller
                   'telefone' => $request->get('telefone'),
                   'email' => $request->get('email'),
                   'descricao' => $request->get('descricao')
+                         ]);}
+                           else{  
 
-                         ]);
+             $this->validate(request(), [
+               'nome' => 'required|unique:treinadors|max:40',
+   
+              ]);
+                 $treinador = new Treinador([
+                  'nome' => $request->get('nome'),
+                  'apelido' => $request->get('apelido'),   
+                  'sexo' => $request->get('sexo'),
+         
+                  'telefone' => $request->get('telefone'),
+                  'email' => $request->get('email'),
+                  'descricao' => $request->get('descricao')
+
+                         ]);}
                         Treinador::create($request->all());
             return back()->with('success', 'Treinador adicionado com sucesso');
       // return redirect()->route('treinador.index')

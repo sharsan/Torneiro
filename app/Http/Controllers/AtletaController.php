@@ -29,8 +29,8 @@ class AtletaController extends Controller
     public function store(Request $request)
     {  
            $this->validate(request(), [
-          'nome' => 'required|unique:atletas|max:40' 
-          'idade'=> 'numeric|min:10|max:90',
+          'nome' => 'required|unique:atletas|max:40',
+          'idade'=> 'numeric|min:3|max:90',
                       ]);
         $atleta = new atleta([
           'nome' => $request->get('nome'),
