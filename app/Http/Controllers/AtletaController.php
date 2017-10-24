@@ -27,11 +27,21 @@ class AtletaController extends Controller
        } 
 
     public function store(Request $request)
-    {  
-           $this->validate(request(), [
-          'nome' => 'required|unique:atletas|max:40',
-          'idade'=> 'numeric|min:3|max:90',
-                      ]);
+    {      
+           $existe=$request->get('idade')!="";
+
+                   if($existe==true){
+                           $this->validate(request(), [
+              'idade'=> 'numeric|min:3|max:90',  
+                                                      ]);
+                                    }
+                   else{  
+
+             $this->validate(request(), [
+               'nome' => 'required|unique:atletas|max:40', 
+                                        ]);
+             }
+
         $atleta = new atleta([
           'nome' => $request->get('nome'),
           'apelido' => $request->get('apelido'),
@@ -40,8 +50,7 @@ class AtletaController extends Controller
           'categoria' => $request->get('categoria'), 
           'escalao' => $request->get('escalao'), 
           'peso' => $request->get('peso'), 
-          'sexo' => $request->get('sexo'), 
-          'idade' => $request->get('idade'), 
+          'sexo' => $request->get('sexo'),  
           'telefone' => $request->get('telefone'), 
           'email' => $request->get('email'), 
           'descricao' => $request->get('descricao') 
@@ -50,8 +59,7 @@ class AtletaController extends Controller
 
       Atleta::create($request->all());
              return back()->with('success', 'Atleta adicionado com sucesso');
-
-        // $atleta->save();
+ 
         // return redirect('/atleta');
         }  
 

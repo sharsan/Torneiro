@@ -62,7 +62,5 @@ class ClubeController extends Controller
            $clube->delete();
 
            return redirect('/clube');
-      } 
-
-      
-     }
+      }  
+}

@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Vencedor;  
 use App\Atleta;    
-
-//use DB;
-
+ 
 
 class VencedorController extends Controller
 {
@@ -55,11 +53,10 @@ $existe=Vencedor::where("nome",$request->get('nome'))->where("escalao",$request-
             {
                  $vencedor = Vencedor::find($id);
                  return view('vencedor.edit',compact('vencedor','id'));
-                    }
-
+                    } 
  
          public function update(Request $request, $id)
-             /*   public function updateAtletas(Request $request, $id)  */
+
             {   request()->validate(
                  [ 
 
@@ -70,8 +67,7 @@ $existe=Vencedor::where("nome",$request->get('nome'))->where("escalao",$request-
              return redirect()->route('arbitro.index')
 
                         ->with('success','Actualizado com sucesso'); 
-                   }
-            
+                   } 
             
          public function destroy($id)
             {
@@ -80,18 +76,10 @@ $existe=Vencedor::where("nome",$request->get('nome'))->where("escalao",$request-
 
               return redirect('vencedor');
                    } 
-
-          //  public function show($id) 
-          //   { 
-          // $vencedor = Vencedor::find($id);
-
-          //   return view('vencedor.show',compact('vencedor')); 
-          //          }  
-
+  
          public function quatro(Request $request)
              { 
                 $atleta =Atleta::all();  
              return view("vencedor.quatro",compact('atleta'));
-             }  
-
+             }   
 }

@@ -17,11 +17,7 @@ class TreinadorController extends Controller
              { 
              $clube =Clube::all();  
              return view("treinador.create",compact('clube'));
-             } 
-         // public function create()
-         //     { 
-         //     return view("treinador.create",compact('treinador'));
-         //     } 
+             }  
 
          public function edit($id)
              {
@@ -35,43 +31,29 @@ class TreinadorController extends Controller
 
                    if($existe==true){
                            $this->validate(request(), [
-              'idade'=> 'numeric|min:10|max:90',
-              'nome' => 'required|unique:treinadors|max:40',
-               // 'idade'=> 'numeric|min:10|max:90',
-              ]);
-                 $treinador = new Treinador([
-                  'nome' => $request->get('nome'),
-                  'apelido' => $request->get('apelido'),   
-                  'sexo' => $request->get('sexo'),
-                  'idade' => $request->get('idade'),
-                  'telefone' => $request->get('telefone'),
-                  'email' => $request->get('email'),
-                  'descricao' => $request->get('descricao')
-                         ]);}
-                           else{  
+              'idade'=> 'numeric|min:10|max:90',  
+                                                      ]);
+                                    }
+                   else{  
 
              $this->validate(request(), [
-               'nome' => 'required|unique:treinadors|max:40',
-   
-              ]);
+               'nome' => 'required|unique:treinadors|max:40', 
+                                        ]);
+             }
+     
                  $treinador = new Treinador([
                   'nome' => $request->get('nome'),
                   'apelido' => $request->get('apelido'),   
-                  'sexo' => $request->get('sexo'),
-         
+                  'sexo' => $request->get('sexo'), 
                   'telefone' => $request->get('telefone'),
                   'email' => $request->get('email'),
                   'descricao' => $request->get('descricao')
 
-                         ]);}
+                         ]);
                         Treinador::create($request->all());
-            return back()->with('success', 'Treinador adicionado com sucesso');
-      // return redirect()->route('treinador.index')
+            return back()->with('success', 'Treinador adicionado com sucesso'); 
 
-      //               ->with('success','Treinador adicionado com sucesso');
-
-             }
-
+             } 
 
     public function update(Request $request, $id)
          {  
@@ -89,11 +71,8 @@ class TreinadorController extends Controller
         $treinador ->email = $request->get('email');
         $treinador ->descricao = $request->get('descricao');
         $treinador->save();
-        return redirect('treinador')->with('success','Treinador actualizado com sucesso');
- 
-    }   
-
- 
+        return redirect('treinador')->with('success','Treinador actualizado com sucesso'); 
+    }    
          public function destroy($id)
             {
                $treinador = Treinador::find($id);

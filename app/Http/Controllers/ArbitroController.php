@@ -25,21 +25,25 @@ class ArbitroController extends Controller
          } 
 
     public function store(Request $request)
-         { 
-           $this->validate(request(), [
-           'nome' => 'required|unique:arbitros|max:40',
-           'idade'=> 'numeric|min:10|max:90',
-           // 'email' => 'unique:users,email'
-           // 'email' => Rule::unique('users')->ignore($user->id, 'user_id'),
-           // 'foto' => 'mimes:jpeg,bmp,png'
-           // 'email' => 'unique:connection.users,email_address'
-           
-            ]);
+         {     
+           $existe=$request->get('idade')!="";
+
+                   if($existe==true){
+                           $this->validate(request(), [
+              'idade'=> 'numeric|min:10|max:90',  
+                                                      ]);
+                                    }
+                   else{  
+
+             $this->validate(request(), [
+               'nome' => 'required|unique:arbitros|max:40', 
+                                        ]);
+             }
+
         $arbitro = new Arbitro([
           'nome' => $request->get('nome'),
           'apelido' => $request->get('apelido'),   
-          'sexo' => $request->get('sexo'),
-          'idade' => $request->get('idade'),
+          'sexo' => $request->get('sexo'), 
           'telefone' => $request->get('telefone'),
           'email' => $request->get('email'),
           'descricao' => $request->get('descricao')
