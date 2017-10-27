@@ -1,5 +1,4 @@
 @extends('master')
-
 @section('content')
  <title>Adicionar torneiro </title>
 <div class="container"> 

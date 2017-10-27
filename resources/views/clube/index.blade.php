@@ -1,4 +1,4 @@
-@extends('master') 
+@extends('master')
 @section('content')
 <title>Clubes </title>
 
@@ -46,11 +46,8 @@
 
           
          <td><a href="{{action('ClubeController@edit', $post['id'])}}" class="btn btn-warning">Editar</a></td>
-        <td>
-
-
-
-
+        <td> 
+          
           <form action="{{action('ClubeController@destroy', $post['id'])}}" method="post">
             {{csrf_field()}}
             <input name="_method" type="hidden" value="DELETE">

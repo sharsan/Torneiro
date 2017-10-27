@@ -1,5 +1,4 @@
-@extends('master')
-
+@extends('master') 
 @section('content')
  <title>Adicionar torneiro </title>
 <div class="container"> 
@@ -59,9 +58,7 @@
                <label for="desclassificados">Nº de desclassificados:
                  <input type="int" class="form-control" name="desclassificados"></input> 
                </label>
-            </div> 
- 
-
+           </div> 
                                         <!-- Data inicial-->
          </div>   
             <div class="col-md-6"> 

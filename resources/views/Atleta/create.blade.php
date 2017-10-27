@@ -1,5 +1,4 @@
 @extends('master')
-
 @section('content')
  <title>Adicionar atleta </title>
 <div class="container"> 
