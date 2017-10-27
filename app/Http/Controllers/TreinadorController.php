@@ -46,11 +46,11 @@ class TreinadorController extends Controller
                   'apelido' => $request->get('apelido'),   
                   'sexo' => $request->get('sexo'), 
                   'telefone' => $request->get('telefone'),
-                  'email' => $request->get('email'),
+                  'email' => $request->get('email'), 
                   'descricao' => $request->get('descricao')
 
                          ]);
-                        Treinador::create($request->all());
+                   Treinador::create($request->all());
             return back()->with('success', 'Treinador adicionado com sucesso'); 
 
              } 

@@ -53,11 +53,12 @@ class AtletaController extends Controller
           'sexo' => $request->get('sexo'),  
           'telefone' => $request->get('telefone'), 
           'email' => $request->get('email'), 
+          'treinador' => $request->get('treinador'), 
           'descricao' => $request->get('descricao') 
           //campos de exigencia de valores
         ]);
 
-      Atleta::create($request->all());
+           Atleta::create($request->all());
              return back()->with('success', 'Atleta adicionado com sucesso');
  
         // return redirect('/atleta');
@@ -65,7 +66,7 @@ class AtletaController extends Controller
 
     public function show($id) 
     { 
-          $atleta = Article::find($id);
+          $atleta = Atleta::find($id);
 
             return view('atleta.show',compact('atleta')); 
         } 
@@ -73,8 +74,11 @@ class AtletaController extends Controller
       public function update(Request $request, $id)
     {
         $atleta = Atleta::find($id);
+        
         $this->validate(request(), [         
-          'nome' => 'required|unique:posts|max:10' 
+          'nome' => 'required'  
+          // 'nome' => 'required|unique:posts|max:15' 
+          //NAO FUNCIONA PORCAUSA DO UNIQUE NO EDIT
             ]);
         $atleta->nome = $request->get('nome');
              // $table->string('email')/*->unique()*/; 
@@ -88,6 +92,7 @@ class AtletaController extends Controller
         $atleta->idade = $request->get('idade');
         $atleta->telefone = $request->get('telefone');
         $atleta->email = $request->get('email');
+        $atleta->treinador = $request->get('treinador');
         $atleta->descricao = $request->get('descricao');
         $atleta->save();
         return redirect('/atleta')->with('success','Arbitro actualizado com sucesso');

@@ -97,7 +97,7 @@
                                      <!-- Outros detalhes --> 
 
          <div class="form-group col-md-12">
-              <label for="smFormGroupInput" class="col-sm-2 col-form-label col-form-label-sm">Outros detalhes
+              <label for="descricao" class="col-sm-2 col-form-label col-form-label-sm">Outros detalhes
                
           <br> <br><textarea name="nota" rows="8" cols="80"></textarea> 
               </label>

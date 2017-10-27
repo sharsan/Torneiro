@@ -28,12 +28,18 @@
  <div class="row">
       <div class="form-group col-md-8">   
                                <!-- Nome do campeonato  -->  
+ 
+           <div class="col-md-10"> <br><br>
+                  <label for="nome"> Nome do campeonato :
+                          <select id="nome" name="nome">
+                  <!-- variavel qualquer trn - trn=torneiro-->
+                          @foreach($torneiro as $trn)
+                          <option value="{{$trn->nome}}">{{$trn->nome}} </option>
+                          @endforeach
+                          </select>
+                  </label>    
+            </div> 
 
-           <div class="col-md-12">
-                <label for="nome"> Nome do campeonato :</label>
-                   <input type="text" class="form-control" name="nome"></input> 
-                
-           </div>  
 <!--       </div>
 
       <div class="form-group col-md-8">  -->
@@ -183,7 +189,9 @@
                    @endforeach
                    </select> 
                    </label>   <tr>   
-            </div>        <label for="">Final </label>
+            </div>      
+
+                   <label for="">Final </label>
             <div class="col-md-10"> 
                    <label for="">Perdedor C-D :
                         <tr>  <select id="" name=""> 

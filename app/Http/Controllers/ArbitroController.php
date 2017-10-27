@@ -56,12 +56,13 @@ class ArbitroController extends Controller
          } 
  
     public function update(Request $request, $id)
-         {      
+         {     
+        $arbitro = Arbitro::find($id);  
+        
          $this->validate(request(), [
           'nome' => 'required' 
             ]);
 
-        $arbitro = Arbitro::find($id); 
         $arbitro ->apelido = $request->get('apelido');
         $arbitro ->nome = $request->get('nome');
         $arbitro ->sexo = $request->get('sexo');

@@ -17,9 +17,10 @@ class CreateAtletasTable extends Migration
             $table->string('escalao',30);
             $table->double('peso', 4);
             $table->string('sexo', 2);
-            $table->integer('idade'();           
+            $table->integer('idade');           
             $table->integer('telefone'); 
-            $table->string('email', 40);  
+            $table->string('email', 40); 
+            $table->string('treinador', 40);  
             $table->string('descricao', 150);
             $table->timestamps();
         });

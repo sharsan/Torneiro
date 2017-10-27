@@ -11,12 +11,12 @@
         <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <br><br>
+        <br> 
 
         <h1><p class="text-center">Federação Moçambicana de Judo</p></h1>
         <div class="container">
-<!-- <div class="col-md-2"> -->   
-           <div class="form-group row">
+<!-- <div class="col-md-2"> -->   <br>
+           <div class="form-group row"><center>
   <a href="{{URL::to('atleta')}}" title="" " class="btn btn-warning"><h4>Atletas</h4></a> 
    
   <a href="{{URL::to('treinador')}}" title="" " class="btn btn-warning"><h4>Treinadores</h4></a> 
@@ -30,8 +30,9 @@
 
   <a href="{{URL::to('vencedor')}}" title="" " class="btn btn-warning"><h4>Resultados</h4></a> 
 
- </div>
- <img src="{{URL::asset('/image/judo.png')}}" alt="profile Pic" height="600" width="900">
+ </div></center>
+ <center>
+ <img src="{{URL::asset('/image/judo.png')}}" alt="profile Pic" height="500" width="750"></center>
      <footer> 
       <h4>
         <p> 

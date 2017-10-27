@@ -65,7 +65,9 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    //'timezone' => 'UTC',
+    //'timezone' => 'UTC+2',
+     'timezone' => 'Africa/Maputo',
 
     /*
     |--------------------------------------------------------------------------

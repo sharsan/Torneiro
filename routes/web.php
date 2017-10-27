@@ -12,13 +12,13 @@ Route::get('home', function () {
 Route::resource('arbitro', 'ArbitroController');
 Route::resource('atleta', 'AtletaController'); 
 Route::resource('clube', 'ClubeController'); 
-Route::resource('treinador', 'TreinadorController');   
+Route::resource('treinador', 'TreinadorController');  
+Route::resource('torneiro', 'TorneiroController');   
 Route::resource('vencedor', 'VencedorController');   
- 
 
 Route::get('/login', 'LoginController@form');
 Route::post('/login', 'LoginController@login');
 
-Route::get('/quatro', 'VencedorController@quatro');
- 
-// Route::get('/novoT', 'TreinadorController@criar');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

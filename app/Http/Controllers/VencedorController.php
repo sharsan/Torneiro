@@ -4,39 +4,43 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Vencedor;  
-use App\Atleta;    
+use App\Vencedor;    
+use App\Atleta;
+// use App\Torneiro;      
  
 
 class VencedorController extends Controller
 {
-           public function index()
+         public function index()
              {
              $vencedor =Vencedor::all()->toArray();  
              return view("vencedor.index",compact('vencedor'));
              }
 
          public function create()
-             { 
-                $atleta =Atleta::all();  
+       { 
+             // $torneiro =Torneiro::all();  
+             // return view("vencedor.create",compact('torneiro'));
+            
+             $atleta =Atleta::all(); 
              return view("vencedor.create",compact('atleta'));
              }  
 
          public function store(Request $request)
             {   
 
-        $this->validate(request(), [
-           'nome' => 'required|unique:arbitros|max:40',  
+                 $this->validate(request(), [
+                 'nome' => 'required|unique:vencedors|max:40',  
             ]);
-        $vencedor = new Vencedor([
-          'juri' => $request->get('juri'),
-          'escalao' => $request->get('escalao'),
-          'nome' => $request->get('nome'),
-          'primeiro' => $request->get('primeiro'),
-          'segundo' => $request->get('segundo'),
-          'terceiro' => $request->get('terceiro'),
-          'terceiro2' => $request->get('terceiro2'),
-          'descricao' => $request->get('descricao') 
+                 $vencedor = new Vencedor([
+                 'juri' => $request->get('juri'),
+                 'escalao' => $request->get('escalao'),
+                 'nome' => $request->get('nome'),
+                 'primeiro' => $request->get('primeiro'),
+                 'segundo' => $request->get('segundo'),
+                 'terceiro' => $request->get('terceiro'),
+                 'terceiro2' => $request->get('terceiro2'),
+                 'descricao' => $request->get('descricao') 
           ]);
 
 $existe=Vencedor::where("nome",$request->get('nome'))->where("escalao",$request->get('escalao'))->exists();
@@ -75,11 +79,5 @@ $existe=Vencedor::where("nome",$request->get('nome'))->where("escalao",$request-
                $vencedor->delete();
 
               return redirect('vencedor');
-                   } 
-  
-         public function quatro(Request $request)
-             { 
-                $atleta =Atleta::all();  
-             return view("vencedor.quatro",compact('atleta'));
-             }   
+                   }   
 }
