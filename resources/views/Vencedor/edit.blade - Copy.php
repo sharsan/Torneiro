@@ -31,7 +31,7 @@
 
            <div class="col-md-12">
                 <label for="nome"> Nome do campeonato :</label>
-                   <input type="text" class="form-control" name="nome"></input> 
+                   <input type="text" class="form-control" name="nome"value="{{$vencedor->nome}}"></input> 
                 
            </div>  
 <!--       </div>
@@ -59,10 +59,10 @@
                     </select>  
               </label>   
               </div>
-        </div> 
-                                              <!-- juri : -->
+        </div>
+       <!-- <div class="form-group row"> -->
       <div class="form-group col-md-8"> 
-            <div class="col-md-6">     
+            <div class="col-md-6">                                                <!-- juri : -->
                 <label for="juri">Júri : 
                   <input type="text" class="form-control" name="juri"></input>
                 </label>
@@ -71,7 +71,6 @@
    </div> 
    <div class="row"> 
        <div class="form-group col-md-8"> 
-                                            <!-- 1º lugar -->
             <div class="col-md-10"> <br><br>
                   <label for="primeiro"> 1º lugar:
                           <select id="primeiro" name="primeiro">
@@ -82,7 +81,6 @@
                           </select>
                   </label>    
             </div> 
-                                            <!-- 2º lugar -->
             <div class="col-md-10"> 
                   <label for="segundo"> 2º lugar:
                          <select id="segundo" name="segundo">
@@ -93,7 +91,6 @@
                           </select> 
                   </label>
             </div> 
-                                            <!-- 3º lugar -->
             <div class="col-md-10"> 
                           <label for="terceiro"> 3º lugar:
                           <select id="terceiro" name="terceiro">
@@ -104,19 +101,9 @@
                           </select> 
                           </label>
             </div>
-                                            <!-- 3º lugar -->
-            <div class="col-md-10"> 
-                          <label for="terceiro2"> 3º lugar:
-                          <select id="terceiro2" name="terceiro2">
-                  
-                          @foreach($atleta as $atl)
-                          <option value="{{$atl->nome}}">{{$atl->nome}} </option>
-                          @endforeach
-                          </select> 
-                          </label>
-            </div>
-        </div> 
-     
+ 
+
+        </div>
      </div> 
 
                                      <!-- Outros detalhes --> 
@@ -124,7 +111,7 @@
          <div class="form-group col-md-12">
              <br> <label for="descricao" class="col-sm-2 col-form-label col-form-label-sm">Outros detalhes
                
-          <br> <br><textarea name="descricao" rows="8" cols="80"></textarea> 
+          <br> <br><textarea name="descricao" rows="8" cols="80"value="{{$vencedor->descricao}}"></textarea> 
               </label>
         </div>
 

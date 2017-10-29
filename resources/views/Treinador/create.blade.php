@@ -1,5 +1,4 @@
-@extends('master')
-
+@extends('admin')
 @section('content')
        <title>Adicionar treinador</title> 
 <div class="container">
@@ -91,6 +90,7 @@
                         @endforeach
                 </select>
               </label> 
+              <label> <a href="{{URL::to('clube')}}" title=""><h5>+ Outro clube</h5></a>  </label>      
            </div> 
          </div> 
 

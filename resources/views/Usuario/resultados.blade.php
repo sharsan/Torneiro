@@ -8,8 +8,8 @@
   <table class="table table-striped">   </a>
       <thead>
         <tr>
-          <th>ID</th> 
-          <th>Nome do campeonato</th>
+
+          <th>Nome do campeonato</th> 
           <th>Escalão</th>
           <th>1º lugar</th>
           <th>2º lugar</th>
@@ -23,8 +23,7 @@
       <tbody>
         @foreach($vencedor as $post)
         <tr>
-          <td>{{$post['id']}}</td>
-          <td>{{$post['nome']}}</td>
+          <td>{{$post['nome']}}</td> 
           <td>{{$post['escalao']}}</td>
           <td>{{$post['primeiro']}}</td>
           <td>{{$post['segundo']}}</td>

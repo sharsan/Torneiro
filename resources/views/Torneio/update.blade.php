@@ -1,10 +1,9 @@
-@extends('master')
-
+@extends('admin')
 @section('content')
- <title>Registrar atleta </title>
+ <title>Registrar torneio </title>
 <div class="container">
-      <h2>Registrar atleta</h2><br> 
-        <a href="{{URL::to('atleta')}}" title=""><h4><- voltar</h4></a>   
+      <h2>Registrar torneio</h2><br> 
+        <a href="{{URL::to('torneio')}}" title=""><h4><- voltar</h4></a>   
 
                @if ($errors->any())
                    <div class="alert alert-danger">
@@ -22,7 +21,7 @@
                    </div><br>
                @endif
           
-  <form method="post" action="{{url('atleta')}}">
+  <form method="post" action="{{url('torneio')}}">
     <div class="form-group row">
         {{csrf_field()}} 
 
@@ -165,7 +164,7 @@
         </div>
 
    <div class="form-group col-md-4"><br>
-    <button type="submit" class="btn btn-success" style="margin-left:38px">Adicionar atleta</button>  
+    <button type="submit" class="btn btn-success" style="margin-left:38px">Adicionar torneio</button>  
     <!-- -->
   </div>
 </form>

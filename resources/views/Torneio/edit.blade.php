@@ -1,12 +1,12 @@
-@extends('master') 
+@extends('admin')
 @section('content')
-   <title>Actualizando torneiro </title>    
+   <title>Actualizando torneio </title>    
    <link rel="stylesheet" href="{{asset('css/app.css')}}">
  </head>
   <body>
 <div class="container">
-      <h2>Editar torneiro</h2> 
-        <a href="{{URL::to('torneiro')}}" title=""><h4><- voltar</h4></a>   
+      <h2>Editar torneio</h2> 
+        <a href="{{URL::to('torneio')}}" title=""><h4><- voltar</h4></a>   
 
                @if ($errors->any())
                    <div class="alert alert-danger">
@@ -21,10 +21,10 @@
                @if (\Session::has('success'))
                    <div class="alert alert-success">
                         <!-- <p>{{ \Session::get('success') }}</p> -->
-                     <p>{{URL::to('torneiro')}}</p>       
+                     <p>{{URL::to('torneio')}}</p>       
                    </div><br>
                @endif  
-  <form method="post" action="{{action('TorneiroController@update', $id)}}">
+  <form method="post" action="{{action('TorneioController@update', $id)}}">
         {{csrf_field()}} 
       <input name="_method" type="hidden" value="PATCH"> 
 
@@ -35,32 +35,32 @@
                                      <!-- Nome do Evento -->
             <div class="col-md-12">
                 <label for="nome"> Nome :</label>
-                <input type="text" class="form-control" name="nome"value="{{$torneiro->nome}}"></input><br></div>
+                <input type="text" class="form-control" name="nome"value="{{$torneio->nome}}"></input><br></div>
      
                                      <!-- Nº de participantes  -->
                                   
             <div class="col-md-3"> 
                <label for="participantes">Nº de participantes:
-                 <input type="int" class="form-control" name="participantes"value="{{$torneiro->participantes}}"></input> 
+                 <input type="int" class="form-control" name="participantes"value="{{$torneio->participantes}}"></input> 
                </label>
             </div>               
                                      <!-- Nº de rapazes  -->
                                   
             <div class="col-md-3"> 
                <label for="rapazes">Nº de rapazes:
-                 <input type="int" class="form-control" name="rapazes"value="{{$torneiro->rapazes}}"></input> 
+                 <input type="int" class="form-control" name="rapazes"value="{{$torneio->rapazes}}"></input> 
                </label>
             </div>                  <!-- Nº de raparigas  -->
                                   
             <div class="col-md-3"> 
                <label for="raparigas">Nº de raparigas:
-                 <input type="int" class="form-control" name="raparigas"value="{{$torneiro->raparigas}}"></input> 
+                 <input type="int" class="form-control" name="raparigas"value="{{$torneio->raparigas}}"></input> 
                </label>
             </div>                  <!-- Nº de desclassificados  -->
                                   
             <div class="col-md-3"> 
                <label for="desclassificados">Nº de desclassificados:
-                 <input type="int" class="form-control" name="desclassificados"value="{{$torneiro->desclassificados}}"></input> 
+                 <input type="int" class="form-control" name="desclassificados"value="{{$torneio->desclassificados}}"></input> 
                </label>
             </div> 
  
@@ -86,7 +86,7 @@
       <div class="col-md-12"> 
           <br>  <label for="descricao">Outros detalhes :
                 
-               <br><br>  <textarea name="descricao" rows="8" cols="90">{{$torneiro->descricao}}</textarea> 
+               <br><br>  <textarea name="descricao" rows="8" cols="90">{{$torneio->descricao}}</textarea> 
             </label>
              
     <div class="form-group row"><br> 

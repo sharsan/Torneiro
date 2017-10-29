@@ -1,5 +1,4 @@
-@extends('master')
-
+@extends('admin')
 @section('content')
     <title>Actualizando treinador </title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
@@ -45,7 +44,8 @@
                                      <!-- Clube -->
             <div class="col-md-4">
                <label for="clube"> Clube :</label> 
-               <input type="text" class="form-control" name="clube"value="{{$treinador->clube}}"><br></div>
+               <input type="text" class="form-control" name="clube"value="{{$treinador->clube}}"><br>
+            </div>
          </div>    
          <div class="form-group col-md-10">  
 

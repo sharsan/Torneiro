@@ -24,6 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         // return view('home');
-        return view("atleta.indexUser",compact('atleta'));
+        return view("usuario.index");
+        // return view("usuario.index",compact('atleta'));
     }
 }

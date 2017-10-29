@@ -59,10 +59,10 @@
                     </select>  
               </label>   
               </div>
-        </div> 
-                                              <!-- juri : -->
+        </div>
+       <!-- <div class="form-group row"> -->
       <div class="form-group col-md-8"> 
-            <div class="col-md-6">     
+            <div class="col-md-6">                                                <!-- juri : -->
                 <label for="juri">Júri : 
                   <input type="text" class="form-control" name="juri"></input>
                 </label>
@@ -71,7 +71,6 @@
    </div> 
    <div class="row"> 
        <div class="form-group col-md-8"> 
-                                            <!-- 1º lugar -->
             <div class="col-md-10"> <br><br>
                   <label for="primeiro"> 1º lugar:
                           <select id="primeiro" name="primeiro">
@@ -82,7 +81,6 @@
                           </select>
                   </label>    
             </div> 
-                                            <!-- 2º lugar -->
             <div class="col-md-10"> 
                   <label for="segundo"> 2º lugar:
                          <select id="segundo" name="segundo">
@@ -93,7 +91,6 @@
                           </select> 
                   </label>
             </div> 
-                                            <!-- 3º lugar -->
             <div class="col-md-10"> 
                           <label for="terceiro"> 3º lugar:
                           <select id="terceiro" name="terceiro">
@@ -104,20 +101,99 @@
                           </select> 
                           </label>
             </div>
-                                            <!-- 3º lugar -->
-            <div class="col-md-10"> 
-                          <label for="terceiro2"> 3º lugar:
-                          <select id="terceiro2" name="terceiro2">
-                  
-                          @foreach($atleta as $atl)
-                          <option value="{{$atl->nome}}">{{$atl->nome}} </option>
-                          @endforeach
-                          </select> 
-                          </label>
-            </div>
-        </div> 
-     
+        </div>
      </div> 
+
+
+   <div class="row"> 
+       <div class="form-group col-md-6"> <br> <br> 
+            <div class="col-md-10">     
+                  <label for="">A :
+                  <select id="" name="">
+
+                   @foreach($atleta as $atl)
+                   <option value="{{$atl->nome}}">{{$atl->nome}} </option>
+                   @endforeach
+                   </select> 
+                   </label> 
+            </div>
+            <div class="col-md-4">              
+                   <label for="">B :
+                   <select id="" name=""> 
+                   @foreach($atleta as $atl)
+                   <option value="{{$atl->nome}}">{{$atl->nome}} </option>
+                   @endforeach
+                   </select> 
+                   </label>
+            </div> 
+            <div class="col-md-10"> 
+                   <label for="">Vencedor A-B :
+                   <select id="" name=""> 
+                   @foreach($atleta as $atl)
+                   <option value="{{$atl->nome}}">{{$atl->nome}} </option>
+                   @endforeach
+                   </select> 
+                 </label>
+            </div>
+        </div>    
+    </div>     
+    
+   <div class="row"> 
+       <div class="form-group col-md-4"> <br>  
+            <div class="col-md-10">     
+                  <label for="">C :
+                  <select id="" name="">
+
+                   @foreach($atleta as $atl)
+                   <option value="{{$atl->nome}}">{{$atl->nome}} </option>
+                   @endforeach
+                   </select> 
+                   </label> 
+            </div>
+            <div class="col-md-6">              
+                   <label for="">D :
+                   <select id="" name=""> 
+                   @foreach($atleta as $atl)
+                   <option value="{{$atl->nome}}">{{$atl->nome}} </option>
+                   @endforeach
+                   </select> 
+                   </label>
+            </div> 
+            <div class="col-md-10"> 
+                   <label for="">Vencedor C-D :
+                   <select id="" name=""> 
+                   @foreach($atleta as $atl)
+                   <option value="{{$atl->nome}}">{{$atl->nome}} </option>
+                   @endforeach
+                   </select>
+                   </label>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group">
+            <div class="col-md-10"> <br>
+                   <label for="">  3º e 4º </label>
+            </div>
+                  <div class="col-md-10"> 
+                   <label for="">Perdedor A-B :
+                   <select id="" name="">
+                  
+                   @foreach($atleta as $atl)
+                   <option value="{{$atl->nome}}">{{$atl->nome}} </option>
+                   @endforeach
+                   </select> 
+                   </label>   <tr>   
+            </div>        <label for="">Final </label>
+            <div class="col-md-10"> 
+                   <label for="">Perdedor C-D :
+                        <tr>  <select id="" name=""> 
+                   @foreach($atleta as $atl)
+                   <option value="{{$atl->nome}}">{{$atl->nome}} </option>
+                   @endforeach
+                   </select> </tr>
+                   </label> 
+            <tr>
+         </div> 
 
                                      <!-- Outros detalhes --> 
 

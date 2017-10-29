@@ -26,11 +26,19 @@ class VencedorController extends Controller
              return view("vencedor.create",compact('atleta'));
              }  
 
+         public function edit($id)
+            {
+                 $vencedor = Vencedor::find($id);
+                 return view('vencedor.edit',compact('vencedor','id'));
+                    } 
+ 
+
          public function store(Request $request)
             {   
 
                  $this->validate(request(), [
-                 'nome' => 'required|unique:vencedors|max:40',  
+                 // 'nome' => 'required|unique:vencedors|max:40',  
+                 'nome' => 'required|max:40',  
             ]);
                  $vencedor = new Vencedor([
                  'juri' => $request->get('juri'),
@@ -52,13 +60,6 @@ $existe=Vencedor::where("nome",$request->get('nome'))->where("escalao",$request-
             return back()->with('success', 'Ja existe este registo');
           }
                     } 
-
-         public function edit($id)
-            {
-                 $vencedor = Vencedor::find($id);
-                 return view('vencedor.edit',compact('vencedor','id'));
-                    } 
- 
          public function update(Request $request, $id)
 
             {   request()->validate(

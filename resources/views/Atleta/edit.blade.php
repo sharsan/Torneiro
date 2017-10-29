@@ -1,4 +1,4 @@
-@extends('master') 
+@extends('admin')
 @section('content')
    <title>Actualizando atleta </title>    
    <link rel="stylesheet" href="{{asset('css/app.css')}}">
@@ -32,12 +32,12 @@
         <div class="row">
           <div class="form-group col-md-6">  
             
-                            <!-- Apelido -->
+                                      <!-- Apelido -->
             <div class="col-md-6">
                 <label for="apelido"> Apelido:</label>
                 <input type="text" class="form-control" name="apelido"value="{{$atleta->apelido}}"></input> </div>
              
-                             <!-- Nome -->
+                                        <!-- Nome -->
             <div class="col-md-12">
                 <label for="nome"> Nome :</label>
                 <input type="text" class="form-control" name="nome"value="{{$atleta->nome}}"></input><br></div>
@@ -50,7 +50,7 @@
                  <input type="file" class="form-control-file" id="fotografia">
                </label> 
             </div>
-                               <!-- Sexo --> 
+                                        <!-- Sexo --> 
             <div class="col-md-3">  <br> 
                 <label for="sexo">Sexo :
                 <input type="radio" class="form-check-input" name="sexo" value="M" checked></input> 
@@ -60,7 +60,7 @@
                 </label> 
             </div>
             
-                                     <!-- Idade  -->
+                                        <!-- Idade  -->
                                   
             <div class="col-md-2"> 
                <label for="idade"> Idade:
@@ -69,20 +69,20 @@
             </div>  
           </div>
           <div class="form-group col-md-10">    
-                                     <!-- telefone --> 
+                                       <!-- telefone --> 
             <div class="col-md-3">                
                <label for="telefone"> telefone:</label>
                <input type="int" class="form-control" name="telefone"value="{{$atleta->telefone}}"></input></div>  
                  
             <div class="col-md-6">         
-                                     <!-- email --> 
+                                         <!-- email --> 
                <label for="email"> email: </label> 
                <input type="text" class="form-control" name="email"value="{{$atleta->email}}"></input>
             </div> 
               
           </div> 
-             
-                              <!-- Clube -->
+                                                 
+                                      <!-- Clube -->
           
           <div class="col-md-12"> 
              <div class="form-group col-md-10"> <br>
@@ -99,7 +99,7 @@
                     </select> 
                     </tr>  
                  </label>
-                       
+  
                                  <!--Categoria -->
         
                  <label for="categoria">Categoria :

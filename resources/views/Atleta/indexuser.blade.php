@@ -1,9 +1,8 @@
-@extends('admin')
+@extends('master')
 @section('content')
 <title>Atletas </title>
   <div class="container">
-    <table class="table table-striped"> 
-  <a href="{{URL::to('atleta/create')}}" title=""><h4>Adicionar atleta</h4></a>
+    <table class="table table-striped">  
     <thead>
       <tr>
         <th>ID</th>
@@ -18,7 +17,6 @@
         <th>Idade</th>
         <th>Telefone</th>
         <th>email</th> 
-        <th>Treinador</th> 
         <th>Criado em</th>
         <th>Actualizado em</th> 
       </tr>
@@ -38,18 +36,9 @@
         <td>{{$post['idade']}}</td> 
         <td>{{$post['telefone']}}</td>
         <td>{{$post['email']}}</td> 
-        <td>{{$post['treinador']}}</td> 
         <td>{{$post['created_at']}}</td>
         <td>{{$post['updated_at']}}</td>
-
-        <td><a href="{{action('AtletaController@edit', $post['id'])}}" class="btn btn-warning">Editar</a></td>
-        <td>
-          <form action="{{action('AtletaController@destroy', $post['id'])}}" method="post">
-            {{csrf_field()}}
-            <input name="_method" type="hidden" value="DELETE">
-            <button class="btn btn-danger" type="submit">Apagar</button>
-          </form>
-        </td>
+ 
       </tr>
       @endforeach
     </tbody>

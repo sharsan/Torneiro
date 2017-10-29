@@ -1,4 +1,4 @@
-@extends('master') 
+@extends('admin')
 @section('content')
 <title>Adicionar clube</title>
 <div class="container"> 
@@ -38,7 +38,7 @@
                              <!-- Provincia -->
               
 
-        <div class="col-md-12"> 
+         <div class="form-group col-md-12"> 
             <div class="col-md-3"> 
               <label  for="provincia">Provincia:
                 <tr>  <select name="provincia" id="provincia">

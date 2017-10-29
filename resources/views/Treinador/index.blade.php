@@ -1,4 +1,4 @@
-@extends('master')
+@extends('admin')
 @section('content')
 <title>Treinadores </title>
   <div class="container">

@@ -1,5 +1,4 @@
-@extends('master')
-
+@extends('admin')
 @section('content')
  <title>Adicionar arbitro </title>
 <div class="container"> 

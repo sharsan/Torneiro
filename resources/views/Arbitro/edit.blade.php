@@ -1,4 +1,4 @@
-@extends('master') 
+@extends('admin')
 @section('content')
     <title>Actualizando arbitro </title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">

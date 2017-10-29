@@ -3,19 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Torneiro;  
+use App\Torneiro;
+use App\Estado;  
 
 class TorneiroController extends Controller
 { 
-     public function index()
+        public function index()
          {
              $torneiro = Torneiro::all()->toArray();        
              return view('torneiro.index', compact('torneiro'));
-         }
- 
-      public function create()
-         {
-             return view("torneiro.create",compact('torneiro')); 
+         } 
+
+         public function create()
+         {     
+             $estado =Estado::all(); 
+             return view("torneiro.create",compact('estado')); 
          } 
     
          public function edit($id)
@@ -31,7 +33,8 @@ class TorneiroController extends Controller
         'nome' => 'required|unique:torneiros|max:40',
             ]);
             $torneiro = new Torneiro([
-                'nome' => $request->get('nome'),  
+                'nome' => $request->get('nome'),
+                'estado' => $request->get('estado'),  
                 'datai' => $request->get('datai'),   
                 'datat' => $request->get('datat'),   
                 'participantes' => $request->get('participantes'), 
@@ -53,6 +56,7 @@ class TorneiroController extends Controller
                   'nome' => 'required' 
             ]); 
              $torneiro->nome = $request->get('nome');  
+             $torneiro->estado = $request->get('estado');  
              $torneiro->datai = $request->get('datai'); 
              $torneiro->datat = $request->get('datat'); 
              $torneiro->participantes = $request->get('participantes');  

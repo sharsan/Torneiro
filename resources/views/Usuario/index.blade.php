@@ -4,7 +4,7 @@
 
         <!-- Fonts -->
         <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
-    </head>
+ 
     <body> 
            <div class="form-group row">
 <center>

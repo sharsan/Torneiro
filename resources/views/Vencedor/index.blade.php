@@ -1,4 +1,4 @@
-@extends('master') 
+@extends('admin')
 @section('content')
 <title>Vencedores</title>
 <div class="container"> 
@@ -10,7 +10,7 @@
         <tr>
           <th>ID</th> 
           <th>Nome do campeonato</th>
-          <th>Escalão</th>
+          <th>Escalão</th> 
           <th>1º lugar</th>
           <th>2º lugar</th>
           <th>3º lugar</th>

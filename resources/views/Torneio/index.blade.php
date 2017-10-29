@@ -1,13 +1,14 @@
-@extends('master')
+@extends('admin')
 @section('content')
-<title>Torneiros </title>
+<title>Torneios </title>
   <div class="container">
     <table class="table table-striped"> 
-  <a href="{{URL::to('torneiro/create')}}" title=""><h4>Adicionar torneiro</h4></a>
+  <a href="{{URL::to('torneio/create')}}" title=""><h4>Adicionar torneio</h4></a>
     <thead>
       <tr>
         <th>ID</th>
-        <th>Evento</th> 
+        <th>Evento</th>
+        <th>Estado</th> 
         <th>Inicio</th>
         <th>Término</th>
         <th>Participantes</th>
@@ -19,10 +20,11 @@
       </tr>
     </thead>
     <tbody>
-      @foreach($torneiro as $post)
+      @foreach($torneio as $post)
       <tr>
         <td>{{$post['id']}}</td>
         <td>{{$post['nome']}}</td>
+        <td>{{$post['estado']}}</td>
         <td>{{$post['datai']}}</td>
         <td>{{$post['datat']}}</td>
         <td>{{$post['participantes']}}</td>
@@ -32,9 +34,9 @@
         <td>{{$post['created_at']}}</td>
         <td>{{$post['updated_at']}}</td>
 
-        <td><a href="{{action('TorneiroController@edit', $post['id'])}}" class="btn btn-warning">Editar</a></td>
+        <td><a href="{{action('TorneioController@edit', $post['id'])}}" class="btn btn-warning">Editar</a></td>
         <td>
-          <form action="{{action('TorneiroController@destroy', $post['id'])}}" method="post">
+          <form action="{{action('TorneioController@destroy', $post['id'])}}" method="post">
             {{csrf_field()}}
             <input name="_method" type="hidden" value="DELETE">
             <button class="btn btn-danger" type="submit">Apagar</button>

@@ -1,9 +1,9 @@
-@extends('master') 
+@extends('admin') 
 @section('content')
- <title>Adicionar torneiro </title>
+ <title>Adicionar torneio </title>
 <div class="container"> 
-      <h2>Registrar torneiro</h2><br>
-        <a href="{{URL::to('torneiro')}}" title=""><h4><- voltar</h4></a>   
+      <h2>Registrar torneio</h2><br>
+        <a href="{{URL::to('torneio')}}" title=""><h4><- voltar</h4></a>   
 
                @if ($errors->any())
                    <div class="alert alert-danger">
@@ -21,7 +21,7 @@
                    </div><br>
                @endif
                
-  <form method="post" action="{{url('torneiro')}}">
+  <form method="post" action="{{url('torneio')}}">
 
         {{csrf_field()}} 
                           
@@ -29,12 +29,48 @@
           <div class="form-group col-md-6">   
              
                                      <!-- Nome do Evento -->
-            <div class="col-md-12">
-                <label for="nome"> Nome :</label>
-                <input type="text" class="form-control" name="nome"></input><br></div>
-     
+            <div class="col-md-12"> 
+                 <label for="nome"> Nome :
+                 <input type="text" class="form-control" name="nome"></input><br>
+                 </label>   
+            </div>    
+                                        <!-- Data inicial-->
+          
+            <div class="col-md-12"> 
+               <label for="datai">Data inicial :
+                 <meta charset="utf-8"> 
+                 <meta name="datai" content="referrer"> 
+                    <input type="date" placeholder="Ex: 2017-10-29 01:10:43"> 
+                    <!-- <input type="int" class="form-control" name="rapazes"></input> -->
+               </label> 
+
+                                       <!-- Data do termino -->
+          
+                <label for="datat">Data do termino :
+                  <meta charset="utf-8"> 
+                  <meta name="datat" content="width=device-width"> 
+                      <input type="date"> 
+                </label> 
+            </div>            
+                                         <!-- Estado -->
+
+            <div class="col-md-12">   <br>
+                   <label for="estado"> Estado:  
+                     <select id="estado" name="estado">
+                  
+                          @foreach($estado as $est)
+                          <option value="{{$est->nome}}">{{$est->nome}} </option>
+                        @endforeach
+                     </select> 
+                      
+                   </label>  
+                   <label> <a href="{{URL::to('estado')}}" title=""><h5>+ Outro estado</h5></a>  </label>     
+
+            </div>  
+         </div>     
                                      <!-- Nº de participantes  -->
-                                  
+
+         <div class="form-group col-md-10">                        
             <div class="col-md-3"> 
                <label for="participantes">Nº de participantes:
                  <input type="int" class="form-control" name="participantes"></input> 
@@ -58,25 +94,8 @@
                <label for="desclassificados">Nº de desclassificados:
                  <input type="int" class="form-control" name="desclassificados"></input> 
                </label>
-           </div> 
-                                        <!-- Data inicial-->
-         </div>   
-            <div class="col-md-6"> 
-            <label for="datai">Data inicial :
-              <meta charset="ISO8601">
-              <meta name="datai" content="referrer"> 
-                  <input type="date">
-                  
-          </label> 
-                                       <!-- Data do termino -->
-          
-            <label for="datat">Data do termino :
-              <meta charset="utf-8">
-              <!-- <meta charset="ISO-8859-1"> -->
-              <!-- <meta charset="character_set"> -->
-              <meta name="datat" content="width=device-width"> 
-                  <input type="date">
-           </div> 
+           </div>  
+         </div>
                                     <!-- Outros detalhes --> 
 
          <div class="form-group col-md-12">
@@ -87,7 +106,7 @@
         </div>
 
    <div class="form-group col-md-4"> 
-    <button type="submit" class="btn btn-success" style="margin-left:38px">Adicionar torneiro</button>  
+    <button type="submit" class="btn btn-success" style="margin-left:38px">Adicionar torneio</button>  
     <!-- -->
   </div>
 </form>

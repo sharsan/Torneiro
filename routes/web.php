@@ -10,8 +10,9 @@ Route::get('/', function () {
 Route::resource('arbitro', 'ArbitroController');
 Route::resource('atleta', 'AtletaController'); 
 Route::resource('clube', 'ClubeController'); 
+Route::resource('estado', 'EstadoController'); 
 Route::resource('treinador', 'TreinadorController');  
-Route::resource('torneiro', 'TorneiroController');   
+Route::resource('torneio', 'TorneioController');   
 Route::resource('vencedor', 'VencedorController');  
 Route::resource('usuario', 'UsuarioController');   
 

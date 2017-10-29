@@ -1,15 +1,15 @@
 @extends('master')
 @section('content')
-<title>Torneiros </title>
+<title>Torneios </title>
   <div class="container">
  <a href="{{URL::to('usuario')}}" title=""><h4>Inicio</h4></a>  
  <h3><center><th>Eventos</th></center> </h3>
  <a href="{{URL::to('usuario')}}" title=""><h4><- voltar</h4></a>
     <table class="table table-striped">  
     <thead>
-      <tr>
-        <th>ID</th>
+      <tr> 
         <th>Evento</th> 
+        <th>Estado</th>
         <th>Inicio</th>
         <th>Término</th>
         <th>Participantes</th>
@@ -22,9 +22,9 @@
     </thead>
     <tbody>
       @foreach($torneiro as $post)
-      <tr>
-        <td>{{$post['id']}}</td>
+      <tr> 
         <td>{{$post['nome']}}</td>
+        <td>{{$post['estado']}}</td>
         <td>{{$post['datai']}}</td>
         <td>{{$post['datat']}}</td>
         <td>{{$post['participantes']}}</td>

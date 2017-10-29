@@ -1,12 +1,11 @@
-@extends('master') 
+@extends('admin')
 @section('content')
-<title>Actualizando  clube</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  </head>
+<title>Actualizando clube</title>
+ <link rel="stylesheet" href="{{asset('css/app.css')}}"> 
   <body>
 <div class="container">
   <h2>Editar clube</h2><br>
-            <a href="{{URL::to('clube')}}" title=""><h4><- voltar</h4></a>
+       <a href="{{URL::to('clube')}}" title=""><h4><- voltar</h4></a>
 
  
                @if ($errors->any())
